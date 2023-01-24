@@ -1,33 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title>WebDev Studio</title>
-    <!-- import javascript variables and functions -->
-    <script src="app.js" defer></script>
-    <!-- import CSS styles -->
-    <link rel="stylesheet" href="styles.css" /> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Jaswell's Farm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
-  <!-- page content goes into <body> -->
   <body>
-    <div id="cs1300-gallery">
-      <h1>Welcome to my bakery</h1>
-      <p>Add your own images and styles!</p>
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #f5bc42;">
+      <div class="container-fluid">
+        <img src="assets/jaswells-logo.png" height="60px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" id="navbar-text" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbar-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About Us
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="navbar-bold">Picking Schedule</a></li>
+                <li><a href="#" class="navbar-bold">Farm Tours</a></li>
+                <li><a href="#" class="navbar-bold">Family Recipes</a></li>
+                <li><a href="#" class="navbar-bold">Candy Apples</a></li>
+                <li><a href="#" class="navbar-bold">Corporate Information</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="navbar-text" aria-current="page" href="#">In Season</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="navbar-text" aria-current="page" href="#">Farm Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="navbar-text" aria-current="page" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="navbar-text" aria-current="page" href="#">Shop Store</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-      <!-- TODO: PART I Add your own images and use CSS flex to make sure they work on different screen sizes -->
-      <div class="gallery-container">
-        <img class="gallery-item" src="./assets/jeff.jpg" alt="jeff watching u">
-        <img class="gallery-item" src="./assets/crush.jpeg" alt="turtule from nemo">
-        <img class="gallery-item" src="./assets/dory.jpeg" alt="dory says keep swimming">
-        <img class="gallery-item" src="./assets/bruce.jpeg" alt="scary shark">
-        <img class="gallery-item" src="./assets/pic1.jpeg" alt="marlin finding his son">
-        <img class="gallery-item" src="./assets/pic2.jpeg" alt="marlin & dory">
+
+    <h1>Welcome to Jaswell's Farm!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <div class="page-wrapper">
+
+    <div class="flex-container">
+      <div class="farm-images">
+        <img id="large-img" style="max-width:400px;" src="assets/jaswell-title-image.jpeg" alt="Kid with apples">
+        <img id="small-img" style="max-width:400px;" src="assets/jaswells1.jpeg" alt="Farm image">
+      </div>
+    </div>
+    <div class="section">
+      <h2>About the Farm</h2>
+      <p>
+        Welcome to Jaswell’s Farm located in the heart of “apple valley" 
+        in the beautiful and historic town of Smithfield, Rhode Island. 
+        Jaswell’s Farm is the oldest operating apple orchard in Smithfield
+        and currently being run by the fourth generation of the Jaswell Family.
+        We typically offer pick your own on a variety of products and host special events throughout the season. 
+        COVID-19 has changed some procedures and availability but we are working through guidance and will update info soon! 
+        Jaswell’s Farm continues to grow and evolve with the ever-changing environment. 
+      </p>
+    </div>
+    <h2>Apple Picking</h2>
+    <p>Happy Apple Picking Season! We appreciate you choosing our farm for this family fall tradition! 
+      While walk-ins are most certainly welcome, we recommend making reservations to minimize crowding in the orchard.
+    </p>
+
+    <div id="like_button_container"></div>
+
+    <h2>
+      Make a Reservation
+    </h2>
+    <p>
+      Before making a reservation below, please read our apple picking guidelines <a href="https://www.jaswellsfarm.com/picking-schedule.html">here</a>
+    </p>
+    <div class="reservation">
+      <div id="person-select">
+      <label for="reservation">Number of people:</label>
+
+      <select name="reservation" id="reservation">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
       </div>
 
-      <!-- TODO: PART II Uncomment the line below, and hook up this button to display data from an API -->
-      <!-- <button onclick="updatePage()">Press this button to display some fruit data</button> -->
-      <button onclick="updatePage()">Press this button to display some fruit data</button>
+      <div id="date-picker">
+        <label for="start">Reservation date:</label>
+        <input type="date" id="start" name="trip-start"
+         value="2022-11-06"
+         min="2022-11-01" max="2022-12-31">
+      </div>
     </div>
-  </body>
 
+    <div id="like_button_container">
+
+    </div>
+
+    <h2>Hours of Operation</h2>
+    <table> 
+      <tr>
+        <th>Monday</th>
+        <td>9am to 4pm</td>
+      </tr>
+      <tr>
+        <th>Tuesday</th>
+        <td>Closed</td>
+      </tr>
+      <tr>
+        <th>Wednesday to Sunday</th>
+        <td>9am to 4pm</td>
+      </tr>
+    </table>
+  
+    </div>
+    <footer class="text-black text-center text-lg-start">
+
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h3>Have Questions?</h3>
+          <p class="social-media">Call us at 401-231-9043</p>
+          <h3>Connect with Us!</h3>
+          <div class="social-media">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            
+          </div>
+          </div>
+          <!--Grid column-->
+    
+          <!--Grid column-->
+          
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 social-media">
+            <h3>Visit Us!</h3>
+            <p id="text-center">50 Swan Road
+              <br>
+              Smithfield, RI 02917
+            </p>
+            <div class="social-media">
+              <img id="map-img" src="assets/Jaswell's map.png" alt="Jaswell's Farm on map">
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+       Fake Copyright © 2019 Jaswell's Farm
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script src="like_button.js"></script>
+  </body>
 </html>
