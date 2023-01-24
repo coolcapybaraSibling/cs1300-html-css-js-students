@@ -309,9 +309,11 @@ function App() {
     </LocalizationProvider>
 
       <div>
-      <Button variant="outlined" onClick={validTimeDate(dateTime) ? handleDialogOpen : openErr}>
-        Make Reservation
-      </Button>
+      <Box textAlign='center'>
+        <Button id="reservation-button" variant="outlined" onClick={validTimeDate(dateTime) ? handleDialogOpen : openErr}>
+          Make Reservation
+        </Button>
+      </Box>
       <Dialog
         fullScreen={fullScreen}
         open={open}
